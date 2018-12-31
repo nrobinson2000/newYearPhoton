@@ -11,5 +11,6 @@ You can clone this repo with Git and build it with [po-util](https://po-util.com
 ```
 git clone https://github.com/nrobinson2000/newYearPhoton
 cd newYearPhoton
+po config v0.8.0-rc.12
 po photon build
 ```
