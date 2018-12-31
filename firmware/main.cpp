@@ -7,7 +7,6 @@ void startupTasks()
 {
         RGB.control(true);
         RGB.brightness(255);
-
 }
 
 STARTUP(startupTasks());
@@ -35,7 +34,6 @@ int setColorCloud(const char* args) // dim to off and then dim to new color
                 fadeBlue = constrain(lastBlue - i, 0, 255);
 
                 RGB.color(fadeRed, fadeGreen, fadeBlue);
-
                 delay(1);
         }
 
@@ -49,7 +47,7 @@ int setColorCloud(const char* args) // dim to off and then dim to new color
                 delay(1);
         }
 
-        return red*1000000 + green*1000 + blue;
+        return red * 1000000 + green * 1000 + blue;
 }
 
 int setColor(int redF, int greenF, int blueF) // dim to off and then dim to new color
@@ -69,10 +67,10 @@ void setup() // Put setup code here to run once
 
 void loop() // Put code here to loop forever
 {
-        setColor(255, 0, 0);
-        setColor(255, 255, 0);
-        setColor(0, 255, 0);
-        setColor(0, 255, 255);
-        setColor(0, 0, 255);
-        setColor(255, 0, 255);
+        setColor(255, 0, 0);   // RED
+        setColor(255, 255, 0); // YELLOW
+        setColor(0, 255, 0);   // GREEN
+        setColor(0, 255, 255); // CYAN
+        setColor(0, 0, 255);   // BLUE
+        setColor(255, 0, 255); // MAGENTA
 }
