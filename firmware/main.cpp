@@ -3,15 +3,17 @@
 SYSTEM_MODE(MANUAL);
 SYSTEM_THREAD(ENABLED);
 
-int red, green, blue;
-int lastRed, lastGreen, lastBlue;
-
-void startupTasks() {
+void startupTasks()
+{
         RGB.control(true);
         RGB.brightness(255);
 
 }
+
 STARTUP(startupTasks());
+
+int red, green, blue;
+int lastRed, lastGreen, lastBlue;
 
 int setColorCloud(const char* args) // dim to off and then dim to new color
 {
@@ -46,6 +48,7 @@ int setColorCloud(const char* args) // dim to off and then dim to new color
                 RGB.color(fadeRed, fadeGreen, fadeBlue);
                 delay(1);
         }
+
         return red*1000000 + green*1000 + blue;
 }
 
@@ -53,12 +56,15 @@ int setColor(int redF, int greenF, int blueF) // dim to off and then dim to new 
 {
         char message[50];
         snprintf(message, sizeof(message), "%d,%d,%d", redF, greenF, blueF);
+
+        Serial.println("Happy New Year!");
+
         return setColorCloud(message);
 }
 
 void setup() // Put setup code here to run once
 {
-
+  Serial.begin(115200);
 }
 
 void loop() // Put code here to loop forever
