@@ -3,3 +3,5 @@
 # newYearPhoton
 
 Make a Particle Photon flash a cool light pattern
+
+[View the code.](firmware/main.cpp)
